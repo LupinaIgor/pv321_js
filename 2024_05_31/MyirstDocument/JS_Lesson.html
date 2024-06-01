@@ -31,6 +31,19 @@
 </footer>
 
 <script>
+    document.getElementById("mainHeader").onclick = () => {
+        console.log("Some Click")
+    }
+
+    document.getElementById("mainHeader").onmouseover = (ev) =>
+    {
+        ev.target.style.background = "#f00"
+    }
+    document.getElementById("mainHeader").onmouseout = (ev) =>
+    {
+        ev.target.style.background = "#fff"
+    }
+
     console.log("Hello World Hello World Hello World");
 </script>
 
