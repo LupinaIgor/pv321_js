@@ -17,22 +17,53 @@
             <input id="userName"
                     type="text" class="form-control" placeholder="Username" aria-label="Username"
                    aria-describedby="basic-addon1">
-            <button id="btnSend"
+            <button id="btnSendName"
                     class="btn btn-outline-secondary" type="button">Send</button>
         </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">@</span>
+            <input id="userAge"
+                   type="number" min="0" max="100" value="20" class="form-control" placeholder="Age" aria-label="Age"
+                   aria-describedby="basic-addon2">
+            <button id="btnSendAge"
+                    class="btn btn-outline-secondary" type="button">Send Age</button>
+        </div>
+    </div>
+
+    <div id="divAlerts" class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
     </div>
 
 </main>
 
 <script>
-    // const inputUserName = document.getElementById("userName");
-    // const btnSend = document.getElementById("btnSend");
+    const inputUserName = document.getElementById("userName")
+    const btnSendName = document.getElementById("btnSendName")
+    const inputUserAge = document.getElementById("userAge")
+    const divAlerts = document.getElementById("divAlerts")
 
-    console.log(inputUserName)
-    console.log(typeof (inputUserName))
-    btnSend.onclick = () => {
-        console.log(inputUserName.value)
+    inputUserAge.onchange = () => {
+        console.log(inputUserAge.value)
+
+        if(inputUserAge.value < 18) {
+            //inputUserAge.value = 18
+            inputUserAge.style.border = '1px solid red'
+            divAlerts.innerText = "Less than 18"
+            divAlerts.className = 'alert alert-danger'
+        } else {
+            inputUserAge.style.border = '1px solid transparent'
+            divAlerts.innerText = "OK"
+            divAlerts.className = 'alert alert-success'
+        }
+
     }
+
+    // console.log(inputUserName)
+    // console.log(typeof (inputUserName))
+    // btnSend.onclick = () => {
+    //     console.log(inputUserName.value)
+    //}
 </script>
 
 </body>
